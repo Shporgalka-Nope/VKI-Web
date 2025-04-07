@@ -3,10 +3,13 @@ console.log(textField.textContent);
 const interval = 10;
 let quote = "";
 let index = 0;
+let animtaionTimer = null;
 document.addEventListener('DOMContentLoaded', beginAnimation);
 
 function beginAnimation() {
+    if(animtaionTimer) {clearTimeout(animtaionTimer)};
     textField.textContent = "";
+    index = 0;
     const quotes = [
         "«Программирование — это искусство объяснить глупой машине,\nчто делать так, чтобы умный человек понял.»\n— Дональд Кнут.",
         "«Код — как поэзия.\nОн должен быть красивым, лаконичным и выразительным.»\n— Павел Дуров.",
@@ -32,10 +35,23 @@ function getRandomInt(min, max) {
 
 function appendTextBox() {
     console.log(index);
-    textField.textContent += quote[index];
-    index++;
-
+    
     if(index < quote.length) {
-        setTimeout(appendTextBox, interval)
+        textField.textContent += quote[index];
+        index++;
+        animtaionTimer = setTimeout(appendTextBox, interval)
+    } else {
+        animtaionTimer = setTimeout(beginFadeOut, 1500);
     }
+    
+}
+
+function beginFadeOut() {
+    if(animtaionTimer) {clearTimeout(animtaionTimer)};
+
+    textField.classList.add("animate");
+    textField.addEventListener("animationend", () => {
+        textField.classList.remove("animate");
+        beginAnimation();
+    }, {once: true})
 }

@@ -83,6 +83,10 @@ a {
     text-align: center;
 }
 
+#quote-p.animate {
+    animation: fade-out 2s 1;
+}
+
 #list-div {
     border-top: 5px solid #169976;
     background-color: #0b503d;
@@ -93,7 +97,6 @@ a {
     backdrop-filter: blur(10px);
 }
 #list-list-div {
-    
     width: 20vw;
 }
 
@@ -104,4 +107,9 @@ a {
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-  }
+}
+
+@keyframes fade-out {
+    0% {color: white;}
+    100% {color: rgba(255, 255, 255, 0);}
+}
