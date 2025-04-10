@@ -3,6 +3,10 @@ body {
     background-color: white !important;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .block-div {
     width: 100%;
     height: 100vh;
@@ -105,13 +109,12 @@ body {
     margin: 10px 10px 10px 20px;
 }
 
-
 #ways-div {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
 }
 
 #ways-img {
@@ -125,10 +128,11 @@ body {
 #ways-content-div {
     position: absolute;
     align-self: flex-end;
-
+    
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     backdrop-filter: blur(5px) brightness(60%);
     border-radius: 15px 15px 0px 0px;
@@ -137,11 +141,11 @@ body {
     border-right: solid white 2px;
 
     width: 90%;
-    height: 70%;
+    height: 90%;
     z-index: 1;
 }
 
-#ways-content-p-head {
+#ways-content-p-title {
     font-family: "Montserrat";
     font-size: 32px;
     color: white;
@@ -149,32 +153,212 @@ body {
     margin-top: 3%;
 }
 
-#ways-content-p-desc {
+#ways-content-list-div {
+    position: absolute;
+    top: 25%;
+}
+
+#ways-content-li-head {
     font-family: "Montserrat";
-    font-size: 32px;
+    font-size: 28px;
     color: white;
 
     margin-top: 3%;
+}
+
+#ways-content-li-desc {
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+
+    /* margin-top: 3%; */
 }
 
 #agencies-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    /* border-bottom: solid white 2px; */
+}
+
+#agencies-img {
+    object-fit: cover;
+    object-position: 0% 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#agencies-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: 1;
+
+    width: 90%;
+    height: 100%;
+
+    border-left: solid white 2px;
+    border-right: solid white 2px;
+    /* border-radius: 30px; */
+    backdrop-filter: blur(5px) brightness(50%);
 }
 
 #reviews-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
 
+#reviews-img {
+    object-fit: cover;
+    object-position: 0% 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#reviews-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: 1;
+
+    width: 90%;
+    height: 90%;
+
+    backdrop-filter: blur(10px) brightness(50%);
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+    border-radius: 0px 0px 15px 15px;
+}
+
+#reviews-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    width: 95%;
+    height: 95%;
+}
+
+.review-button {
+    width: 30px;
+    height: 100%;
+    color: black;
+    
+    background-color: white;
+    border: white solid 2px;
+}
+
+#reviews-list {
+    width: 95%;
+    height: 95%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review {
+
+}
+
+.review-head {
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: white;
+
+    /* margin-top: 3%; */
+}
+
+.review-body {
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: white;
+
+    /* margin-top: 3%; */
 }
 
 #gallery-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#gallery-img {
+    object-fit: cover;
+    object-position: 0% 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#gallery-content-div {
+    position: absolute;
+    z-index: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+    height: 90%;
+    padding: 15px;
+
+    border: solid 2px white;
+    backdrop-filter: blur(10px) brightness(70%);
+    border-radius: 15px;
+}
+
+#gallery-content-rotation-div {
+    width: 80%;
+    height: 90%;
+    margin-top: 15px;
+
+    overflow: hidden;
+}
+
+#gallery-content-rotation-img {
+    width: 100%;
+    height: auto;
 }
 
 #FAQ-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 
+    background-color: white;
+    border-bottom: solid black 2px;
+}
+
+#FAQ-content-div {
+    display: flex;
+    align-self: self-start;
+    flex-direction: column;
+    margin: 35px;  
 }
 
 #contacts-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
 
+#contacts-flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Fonts */
@@ -184,3 +368,40 @@ body {
     font-weight: 200;
     font-style: normal;
   }
+
+/* Animations */
+@keyframes FadeInAnim {
+    from {
+        position: relative;
+        left: 20px;
+        opacity: 0;
+    }
+
+    to {
+        position: relative;
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+.NextReview {
+    animation: NextReviewAnim 1s ease-out forwards;
+}
+
+@keyframes FadeOutAnim {
+    from {
+        position: relative;
+        left: 0px;
+        opacity: 1;
+    }
+
+    to {
+        position: relative;
+        left: -20px;
+        opacity: 0;
+    }
+}
+
+.PrevReview {
+    animation: PrevReviewAnim 1s ease-out forwards;
+}
