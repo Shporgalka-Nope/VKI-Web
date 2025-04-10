@@ -54,14 +54,18 @@ p {
     background-color: #4e4e4e;
     border-radius: 15px;
     border: 5px solid #169976;
-    width: 70vw;
+    flex: 1;
+    max-width: 100%;
     height: auto;
     overflow: hidden;
+    
 }
 
 #index-p {
     padding: 15px;
     font-size: 18px !important;
+    flex: 1;
+    overflow-wrap: break-word;
 }
 
 
