@@ -20,6 +20,18 @@ ul {
     border-bottom: 5px solid white;
 }
 
+#time-div {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+
+    margin: 15px;
+
+    border-bottom: 2px solid black;
+    width: 100%;
+    height: 100%;
+}
+
 #welcome-img {
     align-self: baseline;
     width: 100%;
